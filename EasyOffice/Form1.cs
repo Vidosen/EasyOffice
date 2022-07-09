@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EasyOffice.Properties;
+
 namespace EasyOffice
 {
     public partial class Form1 : Form
@@ -36,12 +37,10 @@ namespace EasyOffice
             buttonsLeft = new Dictionary<Panel, Appearance>()
             {
                 { Button1, new Appearance(ContentNumbering, Numb, label1) },
-                { Button2, new Appearance(ContentConcat, Concat, label2) },
-                { Button3, new Appearance(ContentConvert, Convert, label3) },
-                { Button4, new Appearance(ContentSettings, Settings, label4) }
+                { Button2, new Appearance(ContentConcat, Concat, label2) }
             };
             LeftMenuClick(Button1, new EventArgs());
-            Field = new FieldConcat(byFolders, (int)numericUpDown1.Value, ContentConcat);
+            Field = new FieldConcat((int)numericUpDown1.Value, ContentConcat);
 
         }
         private void ExitClick(object sender, EventArgs e)
@@ -55,26 +54,20 @@ namespace EasyOffice
         }
         private void LeftMenuClick(object sender, EventArgs e)
         {
-            Panel currentButton = (Panel)sender;
-            foreach (KeyValuePair<Panel, Appearance> item in buttonsLeft)
+            var currentButton = (Panel)sender;
+            foreach (var pair in buttonsLeft)
             {
-                if (currentButton.Equals(item.Key))
-                {
-                    currentButton.BackColor = Color.FromArgb(228, 228, 228);
-                    item.Value.TextButton.ForeColor = Color.FromArgb(140, 140, 140);
-                    item.Value.IconButton.Image = Image.FromFile(Environment.CurrentDirectory + @"\Resources\" + item.Value.IconButton.Name + "Clicked.png");
-                    item.Value.ContentPanel.Visible = true;
-                    item.Value.ContentPanel.Enabled = true;
-                    continue;
-                }
-                item.Key.BackColor = Color.FromArgb(140, 140, 140);
-                item.Value.TextButton.ForeColor = Color.FromArgb(228, 228, 228);
-                item.Value.IconButton.Image = Image.FromFile(Environment.CurrentDirectory + @"\Resources\" + item.Value.IconButton.Name + ".png");
-                item.Value.ContentPanel.Visible = false;
-                item.Value.ContentPanel.Enabled = false;
+                var apperance = pair.Value;
+                var isSelectedPanel = currentButton == pair.Key;
+                pair.Key.BackColor = isSelectedPanel ? Color.FromArgb(228, 228, 228) : Color.FromArgb(140, 140, 140);
+                apperance.TextButton.ForeColor =
+                    isSelectedPanel ? Color.FromArgb(140, 140, 140) : Color.FromArgb(228, 228, 228);
+                apperance.IconButton.Image = Image.FromFile(Environment.CurrentDirectory + @"\Resources\" +
+                                                            pair.Value.IconButton.Name +
+                                                            (isSelectedPanel ? "Clicked.png" : ".png"));
+                apperance.ContentPanel.Visible = isSelectedPanel;
+                apperance.ContentPanel.Enabled = isSelectedPanel;
             }
-
-
         }
 
         private void LabelClick(object sender, EventArgs e)
@@ -82,39 +75,16 @@ namespace EasyOffice
             LeftMenuClick(((Label)sender).Parent, new EventArgs());
         }
 
-        private void CheckedChanged(object sender, EventArgs e)
+        private void OnCheckedChanged()
         {
-            FindMethod method = Field.Method;
-            if (Field.CheckChanges((RadioButton)sender))
-            {
-                Field.Destroy();
-                if (method != FindMethod.Folder)
-                {
-                    Field.Refresh(byFolders, (int)numericUpDown1.Value);
-                }
-                if (method != FindMethod.Name)
-                {
-                    Field.Refresh(byNames, (int)numericUpDown1.Value);
-                }
-            }
+            Field.Destroy();
+            Field.Refresh((int)numericUpDown1.Value);
         }
 
         private void NumericUpDown1_ValueChanged(object sender, EventArgs e)
         {
-            if (byNames.Checked)
-            {
-                CheckedChanged(byNames, new EventArgs());
-            }
-            else if (byFolders.Checked)
-            {
-                CheckedChanged(byFolders, new EventArgs());
-            }
+            OnCheckedChanged();
             Field.ChangeNumeric((int)numericUpDown1.Value);
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            outDialog2.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -146,69 +116,28 @@ namespace EasyOffice
                 Parent = ContentConcat,
                 Location = new Point(4, 328),
                 Size = new Size(98, 30),
-                Text = "Закрыть",
+                Text = Resources.CloseText,
                 BackColor = Color.FromArgb(114, 114, 114),
                 Enabled = false,
                 Margin = new Padding(0, 0, 0, 5),
                 FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(228, 228, 228)
             };
-            Task  task = Task.Factory.StartNew(()=> Field.StartProcess(Process, outDialog2.SelectedPath,progressBar1, textBox1.Text));
+            Field.StartProcess(Process, outDialog2.SelectedPath, progressBar1);
 
             CloseButton.Enabled = true;
-            CloseButton.Click += new EventHandler((object senderOne, EventArgs eOne) =>
+            CloseButton.Click += (senderOne, eOne) =>
             {
-                CheckedChanged(byNames, new EventArgs());
-                CheckedChanged(byFolders, new EventArgs());
+                OnCheckedChanged();
                 Process.Dispose();
                 button5.Visible = true;
                 progressBar1.Value = 0;
                 CloseButton.Dispose();
-            });
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox2.Text = textBox1.Text + "1.pdf , " + textBox1.Text + "2.pdf и т.д.";
-            ValidEnter(button5);
-        }
-        private void textBox1_TextEnter(object sender, EventArgs e)
-        {
-            textBox1.Text = "";
-        }
-
-        void textBox1_TextLeave(object sender, EventArgs e)
-        {
-
-            if (textBox1.Text == "")
-            {
-                textBox1.Text = "Например: поз.9, 6 секц, 9 эт, кв.";
-            }
-
-        }
-
-        private void ValidEnter(object sender)
-        {
-            if (textBox1.Text != "Например: поз.9, 6 секц, 9 эт, кв." && textBox1.Text != "")
-            {
-                button5.Enabled = true;
-            }
-            else
-            {
-                button5.Enabled = false;
-            }
+            };
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            if (ContentMethods.CheckHasWord())
-            {
-                ContentConvert.BackColor = Color.LawnGreen;
-            }
-            else
-            {
-                ContentConvert.BackColor = Color.OrangeRed;
-            }
             CheckFiles_Tick(new object(), new EventArgs());
         }
         public struct Doc
@@ -262,24 +191,23 @@ namespace EasyOffice
                 Parent = ContentNumbering,
                 Location = new Point(4, 328),
                 Size = new Size(98, 30),
-                Text = "Закрыть",
+                Text = Resources.CloseText,
                 BackColor = Color.FromArgb(114, 114, 114),
                 Enabled = false,
                 Margin = new Padding(0, 0, 0, 5),
                 FlatStyle = FlatStyle.Flat,
                 ForeColor = Color.FromArgb(228, 228, 228)
             };
-            Task task = Task.Factory.StartNew(() => ContentMethods.StartNumbering((int)numericUpDown2.Value, (int)numericUpDown3.Value, BoxTitle.Checked, BoxInstruction.Checked, Process, progressBar2, new Doc(tittleOutDialog.SelectedPath,textBox3.Text,checkBox2.Checked), new Doc(contentOutDialog.SelectedPath, textBox4.Text, checkBox3.Checked)));
+            Task.Factory.StartNew(() => ContentMethods.StartNumbering((int)numericUpDown2.Value, (int)numericUpDown3.Value, BoxTitle.Checked, BoxInstruction.Checked, Process, progressBar2, new Doc(tittleOutDialog.SelectedPath,textBox3.Text,checkBox2.Checked), new Doc(contentOutDialog.SelectedPath, textBox4.Text, checkBox3.Checked)));
             CloseButton.Enabled = true;
-            CloseButton.Click += new EventHandler((object senderOne, EventArgs eOne) =>
+            CloseButton.Click += (senderOne, eOne) =>
             {
-                CheckedChanged(byNames, new EventArgs());
-                CheckedChanged(byFolders, new EventArgs());
+                OnCheckedChanged();
                 Process.Dispose();
                 EnterNumb.Visible = true;
                 progressBar2.Value = 0;
                 CloseButton.Dispose();
-            });
+            };
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -290,19 +218,26 @@ namespace EasyOffice
 
         private void CheckFiles_Tick(object sender, EventArgs e)
         {
+            if (!Directory.Exists($@"{Environment.CurrentDirectory}\Word\"))
+                Directory.CreateDirectory($@"{Environment.CurrentDirectory}\Word\");
+            
             EnterNumb.Enabled = true;
             ErrorNumb.Text = "";
-            if (!Directory.EnumerateFiles($@"{Environment.CurrentDirectory}\Word\", "Инструкция.*").Any())
+
+            NotifyIfDocWithNameNotFound(Resources.InstructionDocText);
+            NotifyIfDocWithNameNotFound(Resources.TitleDocText);
+        }
+
+        private void NotifyIfDocWithNameNotFound(string title)
+        {
+            if (HasDocContainingName(title))
             {
                 EnterNumb.Enabled = false;
-                ErrorNumb.Text = "Файл 'Инструкция.doc' не найден! ";
-            }
-            if (!Directory.EnumerateFiles($@"{Environment.CurrentDirectory}\Word\", "Обложка.*").Any())
-            {
-                EnterNumb.Enabled = false;
-                ErrorNumb.Text += "Файл 'Обложка.docx' не найден! ";
+                ErrorNumb.Text += string.Format(Resources.FileWithNameNotFoundText, title);
             }
         }
+        private static bool HasDocContainingName(string docFileNameSubstring) => !Directory
+            .EnumerateFiles($@"{Environment.CurrentDirectory}\Word\", $"*{docFileNameSubstring}*.doc?").Any();
 
         private void button9_Click(object sender, EventArgs e)
         {

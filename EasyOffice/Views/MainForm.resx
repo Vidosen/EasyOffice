@@ -117,23 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="Concat" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Concat.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="CloseText" xml:space="preserve">
-    <value>Закрыть</value>
-  </data>
-  <data name="FileWithNameNotFoundText" xml:space="preserve">
-    <value>Файл '{0}' не найден! </value>
-  </data>
-  <data name="TitleDocText" xml:space="preserve">
-    <value>Обложка</value>
-  </data>
-  <data name="InstructionDocText" xml:space="preserve">
-    <value>Инструкция</value>
-  </data>
-  <data name="ErrorTag" xml:space="preserve">
-    <value>[Ошибка] </value>
-  </data>
 </root>

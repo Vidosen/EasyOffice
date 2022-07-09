@@ -23,8 +23,8 @@
         #region Код, автоматически созданный конструктором форм Windows
 
         /// <summary>
-        /// Требуемый метод для поддержки конструктора — не изменяйте 
-        /// содержимое этого метода с помощью редактора кода.
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
         {
@@ -35,12 +35,6 @@
             this.Collapse = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
             this.LeftMenu = new System.Windows.Forms.Panel();
-            this.Button4 = new System.Windows.Forms.Panel();
-            this.Settings = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.Button3 = new System.Windows.Forms.Panel();
-            this.Convert = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.Button2 = new System.Windows.Forms.Panel();
             this.Concat = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -53,6 +47,7 @@
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.BoxInstruction = new System.Windows.Forms.CheckBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -62,6 +57,7 @@
             this.button8 = new System.Windows.Forms.Button();
             this.EnterNumb = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.BoxTitle = new System.Windows.Forms.CheckBox();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -69,39 +65,18 @@
             this.button9 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.ContentConcat = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.button5 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.byNames = new System.Windows.Forms.RadioButton();
-            this.byFolders = new System.Windows.Forms.RadioButton();
             this.label6 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.Title2 = new System.Windows.Forms.Label();
-            this.ContentConvert = new System.Windows.Forms.Panel();
-            this.label = new System.Windows.Forms.Label();
-            this.ContentSettings = new System.Windows.Forms.Panel();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.outDialog2 = new System.Windows.Forms.FolderBrowserDialog();
             this.tittleOutDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.contentOutDialog = new System.Windows.Forms.FolderBrowserDialog();
             this.CheckFiles = new System.Windows.Forms.Timer(this.components);
             this.dragControl = new EasyOffice.DragControl();
-            this.BoxTitle = new System.Windows.Forms.CheckBox();
-            this.BoxInstruction = new System.Windows.Forms.CheckBox();
             this.PanelHeader.SuspendLayout();
             this.LeftMenu.SuspendLayout();
-            this.Button4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings)).BeginInit();
-            this.Button3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Convert)).BeginInit();
             this.Button2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Concat)).BeginInit();
             this.Button1.SuspendLayout();
@@ -113,9 +88,6 @@
             this.groupBox3.SuspendLayout();
             this.ContentConcat.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            this.ContentConvert.SuspendLayout();
-            this.ContentSettings.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // PanelHeader
@@ -183,8 +155,6 @@
             // LeftMenu
             // 
             this.LeftMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(140)))), ((int)(((byte)(140)))), ((int)(((byte)(140)))));
-            this.LeftMenu.Controls.Add(this.Button4);
-            this.LeftMenu.Controls.Add(this.Button3);
             this.LeftMenu.Controls.Add(this.Button2);
             this.LeftMenu.Controls.Add(this.Button1);
             this.LeftMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -195,82 +165,6 @@
             this.LeftMenu.Name = "LeftMenu";
             this.LeftMenu.Size = new System.Drawing.Size(124, 406);
             this.LeftMenu.TabIndex = 1;
-            // 
-            // Button4
-            // 
-            this.Button4.Controls.Add(this.Settings);
-            this.Button4.Controls.Add(this.label4);
-            this.Button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Button4.Location = new System.Drawing.Point(0, 300);
-            this.Button4.Name = "Button4";
-            this.Button4.Size = new System.Drawing.Size(124, 100);
-            this.Button4.TabIndex = 4;
-            this.Button4.Click += new System.EventHandler(this.LeftMenuClick);
-            // 
-            // Settings
-            // 
-            this.Settings.Enabled = false;
-            this.Settings.Image = ((System.Drawing.Image)(resources.GetObject("Settings.Image")));
-            this.Settings.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Settings.Location = new System.Drawing.Point(12, 7);
-            this.Settings.Name = "Settings";
-            this.Settings.Size = new System.Drawing.Size(100, 58);
-            this.Settings.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Settings.TabIndex = 2;
-            this.Settings.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label4.Location = new System.Drawing.Point(24, 68);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 20);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Настройки";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label4.UseMnemonic = false;
-            this.label4.Click += new System.EventHandler(this.LabelClick);
-            // 
-            // Button3
-            // 
-            this.Button3.Controls.Add(this.Convert);
-            this.Button3.Controls.Add(this.label3);
-            this.Button3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Button3.Location = new System.Drawing.Point(0, 200);
-            this.Button3.Name = "Button3";
-            this.Button3.Size = new System.Drawing.Size(124, 100);
-            this.Button3.TabIndex = 3;
-            // 
-            // Convert
-            // 
-            this.Convert.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Convert.Enabled = false;
-            this.Convert.Image = ((System.Drawing.Image)(resources.GetObject("Convert.Image")));
-            this.Convert.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.Convert.Location = new System.Drawing.Point(12, 6);
-            this.Convert.Name = "Convert";
-            this.Convert.Size = new System.Drawing.Size(100, 50);
-            this.Convert.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.Convert.TabIndex = 2;
-            this.Convert.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.label3.Cursor = System.Windows.Forms.Cursors.Default;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.label3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label3.Location = new System.Drawing.Point(5, 55);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 40);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Конвертировать\r\nв PDF";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label3.UseMnemonic = false;
             // 
             // Button2
             // 
@@ -362,7 +256,7 @@
             this.ContentNumbering.Controls.Add(this.label5);
             this.ContentNumbering.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.ContentNumbering.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.ContentNumbering.Location = new System.Drawing.Point(146, 44);
+            this.ContentNumbering.Location = new System.Drawing.Point(137, 43);
             this.ContentNumbering.Margin = new System.Windows.Forms.Padding(22);
             this.ContentNumbering.Name = "ContentNumbering";
             this.ContentNumbering.Size = new System.Drawing.Size(552, 367);
@@ -384,24 +278,12 @@
             this.numericUpDown2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.numericUpDown2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
             this.numericUpDown2.Location = new System.Drawing.Point(13, 260);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.numericUpDown2.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
+            this.numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(54, 26);
             this.numericUpDown2.TabIndex = 0;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // numericUpDown3
             // 
@@ -409,24 +291,12 @@
             this.numericUpDown3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.numericUpDown3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
             this.numericUpDown3.Location = new System.Drawing.Point(94, 260);
-            this.numericUpDown3.Maximum = new decimal(new int[] {
-            5000,
-            0,
-            0,
-            0});
-            this.numericUpDown3.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
+            this.numericUpDown3.Maximum = new decimal(new int[] { 5000, 0, 0, 0 });
+            this.numericUpDown3.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             this.numericUpDown3.Name = "numericUpDown3";
             this.numericUpDown3.Size = new System.Drawing.Size(54, 26);
             this.numericUpDown3.TabIndex = 1;
-            this.numericUpDown3.Value = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
+            this.numericUpDown3.Value = new decimal(new int[] { 15, 0, 0, 0 });
             // 
             // progressBar2
             // 
@@ -451,6 +321,16 @@
             this.groupBox4.TabIndex = 2;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Инструкция:";
+            // 
+            // BoxInstruction
+            // 
+            this.BoxInstruction.AutoSize = true;
+            this.BoxInstruction.Location = new System.Drawing.Point(10, 152);
+            this.BoxInstruction.Name = "BoxInstruction";
+            this.BoxInstruction.Size = new System.Drawing.Size(129, 23);
+            this.BoxInstruction.TabIndex = 7;
+            this.BoxInstruction.Text = "Инструкция:";
+            this.BoxInstruction.UseVisualStyleBackColor = true;
             // 
             // checkBox3
             // 
@@ -558,6 +438,16 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Обложка:";
             // 
+            // BoxTitle
+            // 
+            this.BoxTitle.AutoSize = true;
+            this.BoxTitle.Location = new System.Drawing.Point(6, 152);
+            this.BoxTitle.Name = "BoxTitle";
+            this.BoxTitle.Size = new System.Drawing.Size(118, 23);
+            this.BoxTitle.TabIndex = 6;
+            this.BoxTitle.Text = "Заголовок:";
+            this.BoxTitle.UseVisualStyleBackColor = true;
+            // 
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
@@ -623,69 +513,18 @@
             // 
             // ContentConcat
             // 
-            this.ContentConcat.Controls.Add(this.textBox2);
-            this.ContentConcat.Controls.Add(this.label10);
-            this.ContentConcat.Controls.Add(this.label9);
-            this.ContentConcat.Controls.Add(this.textBox1);
             this.ContentConcat.Controls.Add(this.progressBar1);
             this.ContentConcat.Controls.Add(this.button5);
-            this.ContentConcat.Controls.Add(this.label8);
-            this.ContentConcat.Controls.Add(this.byNames);
-            this.ContentConcat.Controls.Add(this.byFolders);
             this.ContentConcat.Controls.Add(this.label6);
             this.ContentConcat.Controls.Add(this.numericUpDown1);
             this.ContentConcat.Controls.Add(this.Title2);
             this.ContentConcat.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.ContentConcat.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.ContentConcat.Location = new System.Drawing.Point(146, 44);
+            this.ContentConcat.Location = new System.Drawing.Point(137, 43);
             this.ContentConcat.Margin = new System.Windows.Forms.Padding(0);
             this.ContentConcat.Name = "ContentConcat";
             this.ContentConcat.Size = new System.Drawing.Size(552, 364);
             this.ContentConcat.TabIndex = 3;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.textBox2.Location = new System.Drawing.Point(249, 112);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(280, 42);
-            this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "поз.9, 6 секц, 9 эт, кв.1.pdf , поз.9, 6 секц, 9 эт, кв.2.pdf и т.д.";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(245, 89);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(260, 19);
-            this.label10.TabIndex = 11;
-            this.label10.Text = "Файлы будут именоваться как:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(245, 28);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(205, 19);
-            this.label9.TabIndex = 10;
-            this.label9.Text = "Имена итоговых фалов:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
-            this.textBox1.Location = new System.Drawing.Point(249, 56);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 26);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.Text = "Например: поз.9, 6 секц, 9 эт, кв.";
-            this.textBox1.Click += new System.EventHandler(this.textBox1_TextEnter);
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            this.textBox1.Leave += new System.EventHandler(this.textBox1_TextLeave);
             // 
             // progressBar1
             // 
@@ -700,7 +539,6 @@
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.button5.Enabled = false;
             this.button5.FlatAppearance.BorderSize = 0;
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
@@ -712,44 +550,6 @@
             this.button5.Text = "Начать";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(0, 105);
-            this.label8.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(210, 19);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Способ выбора файлов:";
-            // 
-            // byNames
-            // 
-            this.byNames.AutoSize = true;
-            this.byNames.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.byNames.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.byNames.Location = new System.Drawing.Point(114, 132);
-            this.byNames.Name = "byNames";
-            this.byNames.Size = new System.Drawing.Size(121, 22);
-            this.byNames.TabIndex = 4;
-            this.byNames.Text = "По названию";
-            this.byNames.UseVisualStyleBackColor = true;
-            this.byNames.CheckedChanged += new System.EventHandler(this.CheckedChanged);
-            // 
-            // byFolders
-            // 
-            this.byFolders.AutoSize = true;
-            this.byFolders.Checked = true;
-            this.byFolders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.byFolders.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.byFolders.Location = new System.Drawing.Point(0, 132);
-            this.byFolders.Name = "byFolders";
-            this.byFolders.Size = new System.Drawing.Size(110, 22);
-            this.byFolders.TabIndex = 3;
-            this.byFolders.TabStop = true;
-            this.byFolders.Text = "По папкам /";
-            this.byFolders.UseVisualStyleBackColor = true;
-            this.byFolders.CheckedChanged += new System.EventHandler(this.CheckedChanged);
             // 
             // label6
             // 
@@ -770,25 +570,13 @@
             this.numericUpDown1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.numericUpDown1.Location = new System.Drawing.Point(0, 70);
             this.numericUpDown1.Margin = new System.Windows.Forms.Padding(0, 0, 0, 5);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            9,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            2,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Maximum = new decimal(new int[] { 9, 0, 0, 0 });
+            this.numericUpDown1.Minimum = new decimal(new int[] { 2, 0, 0, 0 });
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(55, 25);
             this.numericUpDown1.TabIndex = 1;
             this.numericUpDown1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            3,
-            0,
-            0,
-            0});
+            this.numericUpDown1.Value = new decimal(new int[] { 3, 0, 0, 0 });
             this.numericUpDown1.ValueChanged += new System.EventHandler(this.NumericUpDown1_ValueChanged);
             // 
             // Title2
@@ -803,102 +591,6 @@
             this.Title2.TabIndex = 0;
             this.Title2.Text = "Объедниение PDF";
             // 
-            // ContentConvert
-            // 
-            this.ContentConvert.Controls.Add(this.label);
-            this.ContentConvert.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.ContentConvert.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.ContentConvert.Location = new System.Drawing.Point(146, 44);
-            this.ContentConvert.Margin = new System.Windows.Forms.Padding(22);
-            this.ContentConvert.Name = "ContentConvert";
-            this.ContentConvert.Size = new System.Drawing.Size(552, 367);
-            this.ContentConvert.TabIndex = 3;
-            // 
-            // label
-            // 
-            this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
-            this.label.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.label.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label.Location = new System.Drawing.Point(-4, 0);
-            this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(260, 22);
-            this.label.TabIndex = 0;
-            this.label.Text = "Конвертация Word >> PDF";
-            // 
-            // ContentSettings
-            // 
-            this.ContentSettings.Controls.Add(this.groupBox2);
-            this.ContentSettings.Controls.Add(this.groupBox1);
-            this.ContentSettings.Controls.Add(this.label7);
-            this.ContentSettings.Location = new System.Drawing.Point(146, 44);
-            this.ContentSettings.Margin = new System.Windows.Forms.Padding(22);
-            this.ContentSettings.Name = "ContentSettings";
-            this.ContentSettings.Size = new System.Drawing.Size(552, 367);
-            this.ContentSettings.TabIndex = 4;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.groupBox2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.groupBox2.Location = new System.Drawing.Point(286, 39);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox2.Size = new System.Drawing.Size(266, 328);
-            this.groupBox2.TabIndex = 2;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Советы по экусплатации:";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(210)))), ((int)(((byte)(210)))), ((int)(((byte)(210)))));
-            this.groupBox1.Controls.Add(this.checkBox1);
-            this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold);
-            this.groupBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.groupBox1.Location = new System.Drawing.Point(0, 39);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(6);
-            this.groupBox1.Size = new System.Drawing.Size(266, 143);
-            this.groupBox1.TabIndex = 1;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Настройки:";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(32, 37);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(190, 22);
-            this.checkBox1.TabIndex = 1;
-            this.checkBox1.Text = "Сохранять изменения";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label11.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label11.ForeColor = System.Drawing.Color.Gray;
-            this.label11.Location = new System.Drawing.Point(28, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(194, 19);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Сообщить об ошибке...";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(114)))), ((int)(((byte)(114)))));
-            this.label7.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(112, 22);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "Настройки";
-            // 
             // CheckFiles
             // 
             this.CheckFiles.Enabled = true;
@@ -909,38 +601,16 @@
             // 
             this.dragControl.SelectControl = this.PanelHeader;
             // 
-            // BoxTitle
-            // 
-            this.BoxTitle.AutoSize = true;
-            this.BoxTitle.Location = new System.Drawing.Point(6, 152);
-            this.BoxTitle.Name = "BoxTitle";
-            this.BoxTitle.Size = new System.Drawing.Size(118, 23);
-            this.BoxTitle.TabIndex = 6;
-            this.BoxTitle.Text = "Заголовок:";
-            this.BoxTitle.UseVisualStyleBackColor = true;
-            // 
-            // BoxInstruction
-            // 
-            this.BoxInstruction.AutoSize = true;
-            this.BoxInstruction.Location = new System.Drawing.Point(10, 152);
-            this.BoxInstruction.Name = "BoxInstruction";
-            this.BoxInstruction.Size = new System.Drawing.Size(129, 23);
-            this.BoxInstruction.TabIndex = 7;
-            this.BoxInstruction.Text = "Инструкция:";
-            this.BoxInstruction.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(228)))), ((int)(((byte)(228)))));
             this.ClientSize = new System.Drawing.Size(720, 432);
+            this.Controls.Add(this.ContentNumbering);
             this.Controls.Add(this.LeftMenu);
             this.Controls.Add(this.PanelHeader);
-            this.Controls.Add(this.ContentNumbering);
-            this.Controls.Add(this.ContentSettings);
             this.Controls.Add(this.ContentConcat);
-            this.Controls.Add(this.ContentConvert);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -950,12 +620,6 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.PanelHeader.ResumeLayout(false);
             this.LeftMenu.ResumeLayout(false);
-            this.Button4.ResumeLayout(false);
-            this.Button4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Settings)).EndInit();
-            this.Button3.ResumeLayout(false);
-            this.Button3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.Convert)).EndInit();
             this.Button2.ResumeLayout(false);
             this.Button2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Concat)).EndInit();
@@ -973,14 +637,7 @@
             this.ContentConcat.ResumeLayout(false);
             this.ContentConcat.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            this.ContentConvert.ResumeLayout(false);
-            this.ContentConvert.PerformLayout();
-            this.ContentSettings.ResumeLayout(false);
-            this.ContentSettings.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -999,34 +656,13 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox Concat;
         private System.Windows.Forms.PictureBox Numb;
-        private System.Windows.Forms.Panel Button3;
-        private System.Windows.Forms.PictureBox Convert;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Panel ContentConvert;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Panel ContentSettings;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel Button4;
-        private System.Windows.Forms.PictureBox Settings;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label Title2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton byNames;
-        private System.Windows.Forms.RadioButton byFolders;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.FolderBrowserDialog outDialog2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.NumericUpDown numericUpDown2;

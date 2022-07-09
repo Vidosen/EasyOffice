@@ -61,12 +61,57 @@ namespace EasyOffice.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Закрыть.
+        /// </summary>
+        internal static string CloseText {
+            get {
+                return ResourceManager.GetString("CloseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap Concat {
             get {
                 object obj = ResourceManager.GetObject("Concat", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [Ошибка] .
+        /// </summary>
+        internal static string ErrorTag {
+            get {
+                return ResourceManager.GetString("ErrorTag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Файл &apos;{0}&apos; не найден! .
+        /// </summary>
+        internal static string FileWithNameNotFoundText {
+            get {
+                return ResourceManager.GetString("FileWithNameNotFoundText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Инструкция.
+        /// </summary>
+        internal static string InstructionDocText {
+            get {
+                return ResourceManager.GetString("InstructionDocText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Обложка.
+        /// </summary>
+        internal static string TitleDocText {
+            get {
+                return ResourceManager.GetString("TitleDocText", resourceCulture);
             }
         }
     }
